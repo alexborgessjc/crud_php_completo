@@ -41,7 +41,7 @@
                 else
                 {
                     //Existe categorias cadastradas!
-                    for($i = 1  ; $i < $numero_resultado; $i++)
+                    for($i = 0  ; $i < $numero_resultado; $i++)
                     {
                         //Gerando um vetor com as categorias
 					    $vetor_categorias = mysqli_fetch_array($resultado_categorias);
