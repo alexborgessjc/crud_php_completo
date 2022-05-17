@@ -20,8 +20,14 @@
     //Se não existir... cadastra!
     //Se existir... voltamos para o formulario!
     if($numero_resultado != 0)
-    {
-        echo "Existe categoria com este nome já cadastrado!";
+    {       
+        //Não existe categorias cadastradas
+        ?>
+        <script>
+            alert("Existe categoria com este nome já cadastrado!");
+            window.location.replace("form_alterar_categoria.php");
+        </script>
+    <?php
     }
     else
     {
