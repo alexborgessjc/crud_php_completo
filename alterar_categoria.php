@@ -27,10 +27,21 @@
             alert("Existe categoria com este nome já cadastrado!");
             window.location.replace("form_alterar_categoria.php");
         </script>
-    <?php
+        <?php
     }
     else
     {
-        echo "Pode cadastrar!";
+        //A categoria está disponível para cadastrar
+        //Gerando a SQL de inserção(Cadastrar)
+        $sql_cadastrar = "UPDATE `categoria`SET `descricao_categoria`= '$novo_texto' WHERE `id_categoria` = $codigo_categoria";
+        //Executando a SQL
+        mysqli_query($conexao, $sql_cadastrar);
+        //Imprimindo na tela
+        ?>
+        <script>
+            alert("Categoria alterada com sucesso!");
+            window.location.replace("form_alterar_categoria.php");
+        </script>
+        <?php
     }
 ?>
