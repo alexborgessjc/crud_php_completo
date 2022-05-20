@@ -17,11 +17,10 @@
     //Transformando a pesquisa em numero!
     $numero_resultado = mysqli_num_rows($resultado_pesquisa);   
 
-    //Se não existir... cadastra!
-    //Se existir... voltamos para o formulario!
+    //Verificando se existe algum registro
     if($numero_resultado != 0)
     {       
-        //Não existe categorias cadastradas
+        //Aqui entra se já existe um valor com o valor informado
         ?>
         <script>
             alert("Existe categoria com este nome já cadastrado!");
@@ -31,12 +30,12 @@
     }
     else
     {
-        //A categoria está disponível para cadastrar
-        //Gerando a SQL de inserção(Cadastrar)
+        //Aqui entra SE A categoria está disponível para cadastrar
+        //Gerando a SQL de ATUALIZAÇÃO
         $sql_cadastrar = "UPDATE `categoria`SET `descricao_categoria`= '$novo_texto' WHERE `id_categoria` = $codigo_categoria";
         //Executando a SQL
         mysqli_query($conexao, $sql_cadastrar);
-        //Imprimindo na tela
+        //Mensagem na tela
         ?>
         <script>
             alert("Categoria alterada com sucesso!");
