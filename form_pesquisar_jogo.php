@@ -1,3 +1,17 @@
+<?php
+    //Obtendo a conexão
+    require('connect.php');
+
+    //Criando a SQL de Pesquisa
+    $sql_pesquisa = "SELECT * FROM `jogos` WHERE `nome_jogo` = 'Castlevania'";
+
+    //Execução da pesquisa
+    $resultado = mysqli_query($conexao, $sql_pesquisa);
+    
+    //Tranformando o valor em vetor
+    $vetor = mysqli_fetch_array($resultado);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +21,8 @@
     <title>Pesquisar Jogo</title>
 </head>
 <body>
-    <img src="./images/castlevania1.jpg">
+    Nome do Jogo: <?php echo $vetor[1];?><br>
+    Destino da imagem do jogo: <?php echo $vetor[3];?><br>   
+    <img src=<?php echo $vetor[3];?>>
 </body>
 </html>
