@@ -21,7 +21,7 @@
             //Executando a busca
             $resultado_busca = mysqli_query($conexao,$sql_busca_jogo);
 
-            //Transformando a buscar em vetor
+            //Transformando o resultado em números
             $resultado_numero = mysqli_num_rows($resultado_busca);
 
             //Verificando se existe algo cadastrado
@@ -34,7 +34,20 @@
                     </script>
                 <?php
             }else{
-                echo "Tem jogo sim!";
+                ?>
+                <table border="1">
+                    <tr><th>Nome do Jogo</th></tr>
+                    <tr>
+                <?php
+                //Laço de repetição
+                for($i=0; $i < $resultado_numero;$i++)
+                {
+                    //Tranformando o resultado em vetor
+                    $vetor_jogos = mysqli_fetch_array($resultado_busca);
+                    //Imprimindo na tela
+                    echo "<td>".$vetor_jogos[1]."</td>";                    
+                }   
+                echo"</tr></table>";
             }
         }        
         else{
