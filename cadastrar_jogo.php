@@ -4,8 +4,25 @@
 
     //Obtendo os valores do formulário
     $nome_jogo = $_POST["c_nome"];  
-    $id_categoria = $_POST["categoria_jogo"]; 
-
+    $id_categoria = $_POST["categoria_jogo"];
+     
+    //Mostrando informações da imagem
+    if(isset($_FILES['arquivo']['name']) && $_FILES["arquivo"]["error"] == 0)
+	{				
+		echo "Você enviou o arquivo: <strong>" . $_FILES['arquivo']['name'] . "</strong><br />";
+		echo "Este arquivo é do tipo: <strong>" . $_FILES['arquivo']['type'] . "</strong><br />";
+		echo "Temporáriamente foi salvo em: <strong>" . $_FILES['arquivo']['tmp_name'] . "</strong><br />";
+		echo "Seu tamanho é: <strong>" . $_FILES['arquivo']['size'] . "</strong> Bytes<br /><br />";
+    }
+    else
+	{
+    ?>
+        <script>
+            alert("Você não enviou nenhum arquivo!");
+            history.go(-1);
+        </script>
+    <?php		
+	}
     //******** Verificando se já existe um  jogo cadastrado com o mesmo nome ******
 
     //Gerando a SQL de PESQUISA do nome do jogo
@@ -27,15 +44,15 @@
         //Imprimindo na tela             
         ?>
             <script>
-                alert("Jogo cadastrado!");
-                window.location.replace("form_cadastrar_jogo.php");
+                //alert("Jogo cadastrado!");
+                //window.location.replace("form_cadastrar_jogo.php");
             </script>
         <?php
     }else{
         ?>
             <script>
-                alert("Jogo já cadastrado");
-                javascript:history.back();
+                //alert("Jogo já cadastrado");
+                //javascript:history.back();
             </script>
         <?php
     }     
