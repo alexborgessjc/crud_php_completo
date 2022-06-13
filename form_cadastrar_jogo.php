@@ -7,8 +7,9 @@
     <title>Loja de Games</title>
 </head>
 <body>
-    <form method="post" action="cadastrar_jogo.php">
+    <form method="post" enctype="multipart/form-data" action="cadastrar_jogo.php">
         <h1>Cadastrar jogos</h1>
+		Selecione uma imagem: <input name="arquivo" type="file"/><br>
 		Nome: <input name="c_nome" type=text size=50 maxlength=50><br>		
 		<!--Campo Categoria-->
 		Categoria:<br>

@@ -36,7 +36,10 @@
             }else{
                 ?>
                 <table border="1">
-                    <tr><th>Nome do Jogo</th></tr>
+                    <tr>
+                        <th>Nome do Jogo</th>
+                        <th>Capa do jogo</th>
+                    </tr>
                     <tr>
                 <?php
                 //Laço de repetição
@@ -45,7 +48,8 @@
                     //Tranformando o resultado em vetor
                     $vetor_jogos = mysqli_fetch_array($resultado_busca);
                     //Imprimindo na tela
-                    echo "<td>".$vetor_jogos[1]."</td>";                    
+                    echo "<td>".$vetor_jogos[1]."</td>";   
+                    echo "<td><img src=".$vetor_jogos[3]." width=200 height=200></td>";                 
                 }   
                 echo"</tr></table>";
             }
