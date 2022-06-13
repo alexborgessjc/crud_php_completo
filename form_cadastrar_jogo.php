@@ -13,7 +13,7 @@
 		Nome: <input name="c_nome" type=text size=50 maxlength=50><br>		
 		<!--Campo Categoria-->
 		Categoria:<br>
-		<select name="categoria_livro">
+		<select name="categoria_jogo">
 			<option>Selecione..</option>
 			<?php
 				//Importando a página de connect

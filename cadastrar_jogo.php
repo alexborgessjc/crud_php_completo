@@ -4,7 +4,7 @@
 
     //Obtendo os valores do formulário
     $nome_jogo = $_POST["c_nome"];  
-    $id_categoria = $_POST["categoria_livro"]; 
+    $id_categoria = $_POST["categoria_jogo"]; 
 
     //******** Verificando se já existe um  jogo cadastrado com o mesmo nome ******
 
@@ -21,7 +21,7 @@
     if($numero_retorno == 0)
     {
         //Gerando a SQL de inserção(Cadastrar) do jogo
-        $sql_cadastrar = "INSERT INTO `jogos`(`nome_jogo`,`id_categoria`) VALUES ('$nome_jogo',$id_categoria)";
+        $sql_cadastrar = "INSERT INTO `jogos`(`nome_jogo`,`id_categoria`,`local_imagem`) VALUES ('$nome_jogo',$id_categoria,'teste')";
         //Executando a SQL
         mysqli_query($conexao, $sql_cadastrar);
         //Imprimindo na tela             
