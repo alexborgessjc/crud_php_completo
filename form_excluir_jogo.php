@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Excluir Jogo</h2>
-    <form action="excluir_categoria.php" method="post">
+    <form action="excluir_jogo.php" method="post">
         <table border="1">
             <tr>
                 <td>ID do Jogo</td>
@@ -49,7 +49,7 @@
                             <tr>
                                 <td>$vetor_jogos[0]</td>
                                 <td>$vetor_jogos[1]</td>
-                                <td><input type='radio' name='check_categoria' value=$vetor_jogos[0]></td>
+                                <td><input type='radio' name='check_jogo' value=$vetor_jogos[0]></td>
                             </tr>
                             ";
                     }
