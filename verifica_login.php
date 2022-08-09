@@ -1,6 +1,6 @@
 <?php		
 	//Recebendo os valores
-	$login = $_POST['c_login'];
+	$usuario = $_POST['c_login'];
 	$senha2 = $_POST['c_senha'];
 	
 	//Criptografando a senha
@@ -10,7 +10,7 @@
 	require('connect.php');
 	
 	//SQL de pesquisa de usuario e senha
-	$sql_pesquisa ="select * from `cliente` where `login` = '$login' AND `senha` = '$senha'";
+	$sql_pesquisa ="select * from `usuarios` where `usuario` = '$usuario' AND `senha` = '$senha'";
 	$resultado_usuario = mysqli_query($conexao,$sql_pesquisa);
 	
 	//tranformando em numero o resultado da pesquisa
@@ -51,5 +51,4 @@
 		</script>
 	<?php
     }
-}
 ?>
