@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 05-Maio-2022 às 13:27
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.1
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 15-Ago-2022 às 12:51
+-- Versão do servidor: 5.7.36
+-- versão do PHP: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,18 +27,22 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `categoria`
 --
 
-CREATE TABLE `categoria` (
-  `id_categoria` int(11) NOT NULL,
-  `descricao_categoria` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `categoria`;
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `id_categoria` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao_categoria` varchar(100) NOT NULL,
+  `nome_imagem` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_categoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `categoria`
 --
 
-INSERT INTO `categoria` (`id_categoria`, `descricao_categoria`) VALUES
-(5, 'RPG'),
-(11, 'Terror');
+INSERT INTO `categoria` (`id_categoria`, `descricao_categoria`, `nome_imagem`) VALUES
+(5, 'RPG', ''),
+(6, 'MOBA', ''),
+(7, 'Luta', '');
 
 -- --------------------------------------------------------
 
@@ -46,18 +50,21 @@ INSERT INTO `categoria` (`id_categoria`, `descricao_categoria`) VALUES
 -- Estrutura da tabela `jogos`
 --
 
-CREATE TABLE `jogos` (
-  `id_jogo` int(11) NOT NULL,
+DROP TABLE IF EXISTS `jogos`;
+CREATE TABLE IF NOT EXISTS `jogos` (
+  `id_jogo` int(11) NOT NULL AUTO_INCREMENT,
   `nome_jogo` varchar(100) NOT NULL,
-  `id_categoria` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_categoria` int(11) NOT NULL,
+  `local_imagem` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_jogo`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `jogos`
 --
 
-INSERT INTO `jogos` (`id_jogo`, `nome_jogo`, `id_categoria`) VALUES
-(1, 'mario', 4);
+INSERT INTO `jogos` (`id_jogo`, `nome_jogo`, `id_categoria`, `local_imagem`) VALUES
+(16, 'Fortnite', 7, 'images/capas/cb8b91a51a948f93f3cc22eeaab27a91.jpg');
 
 -- --------------------------------------------------------
 
@@ -65,57 +72,22 @@ INSERT INTO `jogos` (`id_jogo`, `nome_jogo`, `id_categoria`) VALUES
 -- Estrutura da tabela `usuarios`
 --
 
-CREATE TABLE `usuarios` (
-  `id_usuario` int(11) NOT NULL,
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(20) NOT NULL,
-  `senha` varchar(20) NOT NULL,
+  `senha` varchar(100) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `cpf` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `cpf` int(11) NOT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
--- Índices para tabelas despejadas
+-- Extraindo dados da tabela `usuarios`
 --
 
---
--- Índices para tabela `categoria`
---
-ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`id_categoria`);
-
---
--- Índices para tabela `jogos`
---
-ALTER TABLE `jogos`
-  ADD PRIMARY KEY (`id_jogo`);
-
---
--- Índices para tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `categoria`
---
-ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT de tabela `jogos`
---
-ALTER TABLE `jogos`
-  MODIFY `id_jogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+INSERT INTO `usuarios` (`id_usuario`, `usuario`, `senha`, `nome`, `cpf`) VALUES
+(1, 'teste1', '202cb962ac59075b964b07152d234b70', 'Usuario', 123);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

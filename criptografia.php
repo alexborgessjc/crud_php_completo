@@ -1,5 +1,5 @@
 <?php
-    $senha = "teste123";
+    $senha = "123";
     echo $senha;
 
     //criptografando a senha
