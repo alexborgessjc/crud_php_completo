@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Games</title>
-</head>
-<body>
+  </head>
+  <body>
     <center><h2>Bem-vindo</h2></center>
-		<center><img src="images/inicial.jpg" width="200" height="150"></center><br>
-		<form action="verifica_login.php" method="POST">			
-			<table border="0" align="center">
-				<tr>
-					<th>Login</th><td><input type="text" name="c_login" size="10"></td>
-				</tr>
-				<tr>
-					<th>Senha</th><td><input type="password" name="c_senha" size="10"></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><input type="submit" name="botao" value="OK"></td>
-				</tr>
-				<tr> 
-					<td colspan="2" align="center"><a href="./cadastrar/cadastrar_cliente.php">Cadastre-se já cliente!</a></td>
-				</tr>				
-			</table>
-		</form>	
-</body>
+    <center><img src="images/inicial.jpg" width="200" height="150" /></center>
+    <br />
+    <form action="verifica_login.php" method="POST">
+      <table border="0" align="center">
+        <tr>
+          <th>Login</th>
+          <td><input type="text" name="c_login" size="10" /></td>
+        </tr>
+        <tr>
+          <th>Senha</th>
+          <td><input type="password" name="c_senha" size="10" /></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" name="botao" value="OK" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <a href="./cadastrar/form_cadastrar_usuario.html"
+              >Cadastre-se já cliente!</a
+            >
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
 </html>

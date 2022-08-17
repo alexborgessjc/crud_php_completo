@@ -80,15 +80,15 @@
         //Imprimindo na tela             
         ?>
             <script>
-                //alert("Jogo cadastrado!");
-                //window.location.replace("form_cadastrar_jogo.php");
+                alert("Jogo cadastrado!");
+                window.location.replace("form_cadastrar_jogo.php");
             </script>
         <?php
     }else{
         ?>
             <script>
-                //alert("Jogo já cadastrado");
-                //javascript:history.back();
+                alert("Jogo já cadastrado");
+                javascript:history.back();
             </script>
         <?php
     }     
